@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'info.css' %}">
+    <title>InfoForm</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>Student information form</h1>
+    </div>
+    <div class="container">
+        <form action="save" method="Post">
+            {% csrf_token %}
+            <div class="gencontainer">
+                <div>
+                    <h2>General Information</h2>
+                </div>
+                <div class="genfields">
+                    <table align="center" cellpadding = "10">
+                        <tr>
+                            <td>
+                                <label for="studname"></label><b>Student name</b></label>
+                                <input type="text" id="studname" name="studname">
+                            </td>
+                            <td>
+                                <label for="momname"><b>Mother name</b></label>
+                                <input type="text" id="momname" name="momname">   
+                            </td>
+                        <tr>
+                            <td>
+                                <label for="dob"><b>Date of Birth</b></label><br>
+                                <input type="date" id="dob" name="dob" placeholder="dd/mm/yyyy">
+                            </td>
+                            <td>
+                                <label for="phonum"><b>Contact no.</b></label>
+                                <input type="text" maxlength="10" id="phonum" name="phonum">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="gen" for="Gender"><b>Gender</b></label>    
+                                <br><select id="Gender" name="Gender">
+                                    <option value="select">select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="email"><b>Email ID</b></label>
+                                <input type="text" id="email" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <label for="address"><b>Address</b></label><br>
+                                <textarea name="Address" rows="5" cols="30"></textarea>
+                            </td>
+                            <td>
+                                <label for="pincode"><b>Pin code</b></label>
+                                <input type="text" id="pincode" name="pincode">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="acadcontainer">
+                <div>
+                    <h2>Academic Information</h2>
+                </div>
+                <div class="acadfields">
+                    <table align="center" cellpadding = "10">
+                        <tr>
+                            <td>
+                                <label for="schoolname"><b>School</b></label><br>
+                                <input type="text" id="schoolname" name="schoolname">
+                            </td>
+                            <td>
+                                <label for="board"><b>Board</b></label><br>
+                                <input type="text" id="board" name="board">
+                            </td>
+                        <tr>
+                            <td>
+                                <label for="tenth"><b>10th CGPA</b></label>
+                                <input type="text" id="tenth" name="tenth">
+                            </td>
+                            <td>
+                                <label for="twelth"><b>12th %</b></label>
+                                <input type="text" placeholder="in %" id="twelth" name="twelth">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="college"><b>Institute name</b></label>
+                                <input type="text" id="college" name="college">
+                            </td>
+                            <td>
+                                <label for="batch"><b>Batch</b></label><br>
+                                <input type="text" id="batch" name="batch">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="course"><b>Course</b></label><br>
+                                <input type="text" id="course" name="course">
+                            </td>
+                            <td>
+                                <label for="stream"><b>Stream</b></label>
+                                <input type="text" id="stream" name="stream">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="interncontainer">
+                
+                <div>
+                    <h2>Training Information</h2>
+                </div>
+
+                <div class="internfields">
+                    <table align="center" cellpadding = "10">
+                        <tr>
+                            <td>
+                                <label for="dept"><b>Department</b></label>
+                                <input type="text" id="dept" name="dept">
+                            </td>
+                            <td>
+                                <label for="mentor"><b>Mentor name</b></label>
+                                <input type="text" id="mentor" name="mentor">
+                            </td>
+                        <tr>
+                            <td>
+                                <label for="salary"><b>Stipend</b></label>
+                                <input type="text" id="salary" name="salary">
+                            </td>
+                            <td>
+                                <label for="duration"><b>Duration</b></label>
+                                <input type="number" id="duration" placeholder="in months" name="duration">
+                            </td>
+                        </tr> 
+                    </table>
+                </div>
+            </div> 
+            <div class="submit">
+                <button type="submit">Submit</button>            
+            </div>           
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        <h2>{{message}}</h2>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

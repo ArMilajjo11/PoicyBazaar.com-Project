@@ -1,0 +1,88 @@
+body{
+    background: white ;
+    background-image: url("/static/beaut.jpg")  ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.heading{
+    color:  #f2f2f2;
+    background: rgba(39, 124, 204, 0.952);
+    text-align: center;
+    padding: 15px;
+    margin: 30px 250px;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    font-size: 17px;
+    border: 2px solid  black;
+}
+.container{
+    background-color:  #f2f2f2;
+    padding: 1px;
+    margin: 1px 100px 40px 100px;
+    border-radius: 8px;
+    color: black;
+    font-style: normal;
+}
+.gencontainer{
+    border: 2px solid rgba(39, 124, 204, 0.952);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px 100px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+input[type=text],input[type=date],input[type=number]{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 10px;
+}
+
+#Gender{
+    width: 170px;
+    height: 20px;
+}
+.acadcontainer{
+    border: 2px solid rgba(39, 124, 204, 0.952);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 100px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.interncontainer{
+    border: 2px solid rgba(39, 124, 204, 0.952);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 100px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.submit{
+    text-align: center;
+    padding: 20px 100px 10px;
+
+}
+button{
+    background-color: #04AA6D;
+    color: white;
+    font-size: 15px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 20px;
+}
+
+

@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'booking.css' %}">  
+  <title>Movie booking</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function()
+      {
+        $('.seats').click(function()
+        {
+          var txt = "";
+          $('.seats:checked').each(function()
+          {
+            txt += $(this).val()+"-"
+          });
+          txt = txt.substring(0,txt.length-1);
+          $('#seatnames').val(txt);
+        });
+      });
+  </script>
+</head>
+<body>
+    <div class="head">
+        <h1>Book your show now!</h1>
+    </div>
+    <div class="logout">
+      <a href="{% url 'logout' %}">Log out</a>
+    </div>
+    <div class="card">
+      <form action="book" method="post">
+        {% csrf_token %}
+          <div class="column-l" style="background-color: rgb(12, 12, 88)">
+            <input type="text" name="name" placeholder="Enter name"><br>
+            <select class="sel" name="movie">
+              <option value="---">Select a Movie</option>
+              <option value="Andhadhun/250">Andhadhun (Rs.250)</option>
+              <option value="Dhamaal/200">Dhamaal (Rs.200)</option>
+              <option value="Kal hona ho/250">Kal hona ho (Rs.250)</option>
+              <option value="/270">3 idiots (Rs.270)</option>
+              <option value="3 idiots/200">Extraction (Rs.200)</option>
+              <option value="Bajrangi bhaijan/300">Bajrangi bhaijan (Rs.300)</option>
+              <option value="Singham/200">Singham (Rs.200)</option>
+              <option value="Delhi-6/230">Delhi-6 (Rs.230)</option>
+              <option value="Dabbang/200">Dabbang (Rs.200)</option>
+              <option value="The Shawshank Redemption/300">The Shawshank Redemption (Rs.300)</option>
+              <option value="New york/400">New york (Rs.400)</option>
+              <option value="Special 26 /450">Special 26 (Rs.450)</option>
+              <option value="Hera pheri/100">Hera pheri (Rs.100)</option>
+              <option value="Citizen kane/150">Citizen kane (Rs.150)</option>
+              <option value="10 things I hate about you/240">10 things I hate about you (Rs.240)</option>
+              <option value="Dark knight/350">Dark knight (Rs.350)</option>
+              <option value="Suicide squad/200">Suicide squad (Rs.200)</option>
+              <option value="Matru ki bijli ka mandola/200">Matru ki bijli ka mandola (Rs.200)</option>
+              <option value="Demon Slayer-Mugen train/300"> Demon Slayer-Mugen train(Rs.300)</option>
+              <option value="Welcome/400">Welcome(Rs.400)</option>
+            </select><br>
+            <input type="text" name="persons" placeholder="no. of persons"><br>
+            <input type="date" name="date"><br>
+            <input type="time" name="time">
+            <input type="text" name="seatnames" id="seatnames" placeholder="seats">
+          
+          </div>
+          <div class="column-r" style="background-color:#bbb;">
+            <div class="container">
+              <div class="screen"></div> 
+            </div>
+            <div class="hall">
+              <table align="center" cellpadding = "1">
+                <tr>
+                  <td></td>
+                  <td class="num">1</td>
+                  <td class="num">2</td>
+                  <td class="num">3</td>
+                  <td class="num">4</td>
+                  <td></td><td></td>
+                  <td class="num">5</td>
+                  <td class="num">6</td>
+                  <td class="num">7</td>
+                  <td class="num">8</td>                  
+                </tr>
+                <tr>
+                  <td class="num">A</td>
+                  <td><input type="checkbox" class="seats" value="A1"></td>
+                  <td><input type="checkbox" class="seats" value="A2"></td>
+                  <td><input type="checkbox" class="seats" value="A3"></td>
+                  <td><input type="checkbox" class="seats" value="A4"></td>
+                  <td></td><td></td>
+                  <td><input type="checkbox" class="seats" value="A5"></td>
+                  <td><input type="checkbox" class="seats" value="A6"></td>
+                  <td><input type="checkbox" class="seats" value="A7"></td>
+                  <td><input type="checkbox" class="seats" value="A8"></td>  
+                </tr>
+                <tr>
+                  <td class="num">B</td>
+                  <td><input type="checkbox" class="seats" value="B1"></td>
+                  <td><input type="checkbox" class="seats" value="B2"></td>
+                  <td><input type="checkbox" class="seats" value="B3"></td>
+                  <td><input type="checkbox" class="seats" value="B4"></td>
+                  <td></td><td></td>
+                  <td><input type="checkbox" class="seats" value="B5"></td>
+                  <td><input type="checkbox" class="seats" value="B6"></td>
+                  <td><input type="checkbox" class="seats" value="B7"></td>
+                  <td><input type="checkbox" class="seats" value="B8"></td>  
+                </tr>
+                <tr>
+                  <td class="num">C</td>
+                  <td><input type="checkbox" class="seats" value="C1"></td>
+                  <td><input type="checkbox" class="seats" value="C2"></td>
+                  <td><input type="checkbox" class="seats" value="C3"></td>
+                  <td><input type="checkbox" class="seats" value="C4"></td>
+                  <td></td><td></td>
+                  <td><input type="checkbox" class="seats" value="C5"></td>
+                  <td><input type="checkbox" class="seats" value="C6"></td>
+                  <td><input type="checkbox" class="seats" value="C7"></td>
+                  <td><input type="checkbox" class="seats" value="C8"></td>  
+                </tr>
+                <tr>
+                  <td class="num">D</td>
+                  <td><input type="checkbox" class="seats" value="D1"></td>
+                  <td><input type="checkbox" class="seats" value="D2"></td>
+                  <td><input type="checkbox" class="seats" value="D3"></td>
+                  <td><input type="checkbox" class="seats" value="D4"></td> 
+                  <td></td><td></td>
+                  <td><input type="checkbox" class="seats" value="D5"></td>
+                  <td><input type="checkbox" class="seats" value="D6"></td>
+                  <td><input type="checkbox" class="seats" value="D7"></td>
+                  <td><input type="checkbox" class="seats" value="D8"></td> 
+                </tr>
+              </table>
+              <button type="submit">Confirm Booking</button>             
+            </div>                      
+          </div>
+      </form>
+    </div>
+</body>
+</html>

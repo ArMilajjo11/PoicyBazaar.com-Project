@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(55, 23, 92);
+}
+.box{
+    background-color: rgba(255, 255, 255, 0.904);
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    border-radius: 25px;
+}
+.head{
+    background-color: rgb(126, 6, 126);
+    padding: 6px;
+    margin: 15px 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    color: white;
+}
+.card{
+    background-color: cornflowerblue;
+    height: 300px;
+    margin: 15px 30px;
+    border-radius: 20px;
+}
+.card p{
+    font-weight: bold;
+    text-align: center;
+    font-family: monospace;
+}
+#price{
+    font-size: 29px;
+    font-style: italic;
+    color: white;
+}
+#sent{
+    margin: 10px 50px ;
+    font-family: monospace  ;
+    color: rgba(0, 0, 0, 0.863);
+    font-size: 17px;
+}
+.ok{
+    font-weight: bold;
+    background-color: white;
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    bottom: 50px;
+    left: 550px;
+    font-size: 18px;
+}
+.ok a{
+    text-decoration: none;
+    color: rgb(9, 9, 94);
+}
+.ok a:hover{
+    color: rgb(211, 59, 85);
+}
